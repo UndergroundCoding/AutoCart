@@ -50,6 +50,5 @@ Both motors are controlled by a single arduino.
 ### Brain
 The Brain is the central processing unit of AC, a raspberry pi 3 b+. Here all data is processed and decisions made. 
 
-###
-"You think you do....... But you don't" - Richard
+##### "You think you do....... But you don't" - Richard
 
