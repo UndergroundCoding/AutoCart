@@ -1,5 +1,20 @@
-//#include <SR04.h>
-#include "SR04.h"
+/*
+ *  RoboCart: Obstacle Avoidance  
+ *  
+ *  03/08/19
+ *  Todo:
+ *   * Make code less repetitive (array of sensor objects[x]?)
+ *   * Arrange sensors by side
+ *   * Comment behavior
+ *   * Update Done/TODO whenever something has beem implemented/thought of
+ *  Done:
+ *   * Created GitHub
+ *   * Added header
+ *   * Copied modified library to local folder
+ *   * goddamnit magno....
+ */
+
+#include "SR04.h"   // Use modified library in folder
 
 #define minDistance 90.0
 
@@ -23,6 +38,7 @@
 #define ledC  8
 #define ledR  6
 
+// Sensor objects
 SR04 usLL = SR04(echoLL, trigL);
 SR04 usLR = SR04(echoLR, trigL);
 SR04 usCL = SR04(echoCL, trigC);
@@ -68,6 +84,9 @@ void loop()
     digitalWrite(ledR, LOW);
   }
 
+  // Why are these calls here? Probably unnecessary.
+  // Remember each call to getDistance() takes a long time, so unnecessary calls
+  // will reduce response time considerably.
   long usDistLL = usLL.getDistance();
   long usDistLR = usLR.getDistance();
   long usDistCL = usCL.getDistance();
